@@ -260,9 +260,12 @@ func main() {
 		}
 	}
 
-	_ = os.WriteFile("output.txt", []byte(sb.String()), 0644)
+	// If no JSON output is requested, write the human-readable output.txt
+	if *jsonOut == "" {
+		_ = os.WriteFile("output.txt", []byte(sb.String()), 0644)
+	}
 
-	// If requested, write a JSON summary
+	// If requested, write a JSON summary (and skip text output when set)
 	if *jsonOut != "" {
 		type Result struct {
 			Factors       [4]float64 `json:"factors"`
