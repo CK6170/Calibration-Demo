@@ -1,4 +1,4 @@
-configVersion: 2
+version: 2
 run:
   timeout: 2m
 linters:
