@@ -1,0 +1,7 @@
+Calibration weight W = 100
+Zero reference (adc): [1000 1000 1000 1000]
+Computed factors f0..f3 (weight per ADC count):
+  f0 = 1.185656749
+  f1 = 1.133245818
+  f2 = 1.208093666
+  f3 = 0.9504649003
