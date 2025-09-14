@@ -114,6 +114,10 @@ func main() {
 				}
 			}
 		}
+		// If adc-file parsed successfully, auto-enable apply
+		if haveADC {
+			*apply = true
+		}
 	}
 
 	factors, A, b, err := ComputeFactors(cal, ridge)
