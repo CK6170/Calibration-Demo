@@ -267,16 +267,7 @@ func main() {
 
 	// If requested, write a JSON summary (and skip text output when set)
 	if *jsonOut != "" {
-		type Result struct {
-			Factors       [4]float64 `json:"factors"`
-			ResidualVar   float64    `json:"residual_variance"`
-			RSS           float64    `json:"rss"`
-			DetA          float64    `json:"det_A"`
-			ErrorDet      float64    `json:"error_det"`
-			CalibrationW  float64    `json:"calibration_weight"`
-			CalibrationOK bool       `json:"calibration_ok"`
-		}
-		res := Result{
+		res := CalibrationResult{
 			Factors:       factors,
 			ResidualVar:   residualVar,
 			RSS:           rss,
