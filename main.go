@@ -116,7 +116,7 @@ func main() {
 		}
 	}
 
-	factors, A, b, err := ComputeFactors(cal, ridge, printNormal)
+	factors, A, b, err := ComputeFactors(cal, ridge)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "calculation error: %v\n", err)
 		os.Exit(1)

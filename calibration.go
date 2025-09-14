@@ -1,3 +1,5 @@
+// Package main contains the calibration solver used to compute scale factors
+// for a 4-channel ADC weight estimation.
 package main
 
 import (
@@ -16,9 +18,8 @@ import (
 // We solve (X^T X) f = X^T y for f using Gaussian elimination on the 4x4 normal matrix.
 // ComputeFactors performs a least-squares fit. If ridge>0, adds ridge regularization (lambda)
 // to the diagonal of the normal matrix A to stabilize the solution.
-// If printNormal is true, the function will also return the normal matrix A and vector b
-// for inspection (useful for debugging calibration data).
-func ComputeFactors(cal CalibrationData, ridge float64, printNormal bool) ([4]float64, [4][4]float64, [4]float64, error) {
+// The function returns the normal matrix A and vector b for inspection (useful for debugging calibration data).
+func ComputeFactors(cal CalibrationData, ridge float64) ([4]float64, [4][4]float64, [4]float64, error) {
 	var factors [4]float64
 	W := cal.CalibrationWeight
 	// Build measurement rows: order cell0..cell3, center
