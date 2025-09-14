@@ -1,0 +1,3 @@
+module github.com/CK6170/Calibration-Demo
+
+go 1.20
