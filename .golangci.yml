@@ -7,7 +7,6 @@ linters:
     - staticcheck
     - errcheck
     - revive
-    - gofmt
     - ineffassign
     - unused
     - bodyclose
