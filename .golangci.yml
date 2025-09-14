@@ -1,0 +1,21 @@
+configVersion: 2
+run:
+  timeout: 2m
+linters:
+  enable:
+    - govet
+    - staticcheck
+    - errcheck
+    - revive
+    - gofmt
+    - ineffassign
+    - unused
+    - bodyclose
+linters-settings:
+  revive:
+    rules:
+      - name: indent-error-flow
+        severity: warning
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
